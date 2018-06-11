@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+
+<body>
+  <div class="time">
+    <p class="time-text"></p>
+    <script>
+      const timeText = document.querySelector('.time-text');
+      function getTime() {
+        timeText.innerText = new Date();
+      }
+      getTime();
+      setInterval(getTime, 1000);
+    </script>
+  </div>
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour-hand"></div>
+      <div class="hand min-hand"></div>
+      <div class="hand second-hand"></div>
+    </div>
+  </div>
+
+
+  <style>
+    html {
+      background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .time-text {
+      color: white;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid white;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 3px #EFEFEF,
+      inset 0 0 10px black,
+      0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px);
+      /* 轉成正確方向 */
+      transform: rotate(90deg);
+      /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width: 50%;
+      height: 10px;
+      /* background:black; */
+      position: absolute;
+      top: 50%;
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      transform-origin: 100%;
+
+    }
+
+    .hour-hand {
+      background: black;
+      width: 35%;
+      left: 15%;
+
+    }
+
+    .min-hand {
+      background: black;
+    }
+
+    .second-hand {
+      background: red;
+      transform: rotate(30deg);
+      height: 3px;
+      border-radius: 30%;
+
+    }
+  </style>
+
+  <script>
+    function setTime() {
+      const secondHand = document.querySelector('.second-hand');
+      const minHand = document.querySelector('.min-hand');
+      const hourHand = document.querySelector('.hour-hand');
+
+      const now = new Date();
+      const seconds = now.getSeconds();
+      const mins = now.getMinutes();
+      const hours = now.getHours();
+      const secondDegrees = (seconds / 60) * 360;
+      //分針要計算到秒數已經走的
+      const minDegrees = (mins / 60) * 360 + (seconds / 60) * 6; //6代表一分6度
+      //時真要計算到分針已經走的
+      const hourDegrees = (hours / 12) * 360 + (mins / 60) * 30;//30代表一時30度
+
+      computeDegreesAndSetUI(secondHand, secondDegrees);
+      computeDegreesAndSetUI(minHand, minDegrees);
+      computeDegreesAndSetUI(hourHand, hourDegrees);
+
+    }
+    function computeDegreesAndSetUI(element, deg) {
+      if (deg === 0) {
+        document.querySelector('.hand').style.transition = '';
+      } else {
+        document.querySelector('.hand').style.transition = 'all 0.05s';
+      }
+      element.style.transform = `rotate(${deg}deg)`;
+    }
+    //先執行一遍避免需要等待
+    setTime();
+    setInterval(setTime, 1000);
+
+  </script>
+</body>
+
+</html>
