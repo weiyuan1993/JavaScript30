@@ -85,6 +85,16 @@
 
     }
 
+    /* 防止指針在360度時亂跳*/
+
+    .hand-without-animation {
+      width: 50%;
+      height: 10px;
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+    }
+
     .hour-hand {
       background: black;
       width: 35%;
@@ -98,7 +108,6 @@
 
     .second-hand {
       background: red;
-      transform: rotate(30deg);
       height: 3px;
       border-radius: 30%;
 
@@ -128,9 +137,11 @@
     }
     function computeDegreesAndSetUI(element, deg) {
       if (deg === 0) {
-        document.querySelector('.hand').style.transition = '';
+        element.classList.remove('hand');
+        element.classList.add('hand-without-animation');
       } else {
-        document.querySelector('.hand').style.transition = 'all 0.05s';
+        element.classList.remove('hand-without-animation');
+        element.classList.add('hand');
       }
       element.style.transform = `rotate(${deg}deg)`;
     }
