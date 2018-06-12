@@ -137,11 +137,11 @@
     }
     function computeDegreesAndSetUI(element, deg) {
       if (deg === 0) {
-        element.classList.remove('hand');
-        element.classList.add('hand-without-animation');
-      } else {
-        element.classList.remove('hand-without-animation');
-        element.classList.add('hand');
+        element.classList.toggle('hand');
+        element.classList.toggle('hand-without-animation');
+      } else if (deg === 6) {
+        element.classList.toggle('hand-without-animation');
+        element.classList.toggle('hand');
       }
       element.style.transform = `rotate(${deg}deg)`;
     }
