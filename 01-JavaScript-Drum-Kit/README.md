@@ -16,3 +16,7 @@ docuemnt.querySelector(`audio[data-key=63]`)
 
 ### 利用 forEach 監聽全部按鈕
 對象必須是陣列，可針對陣列內每一元素綁定監聽
+
+### flex
+
+
