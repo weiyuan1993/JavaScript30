@@ -7,7 +7,7 @@
 ```javascript
 docuemnt.querySelector(`audio[data-key=63]`)
 ```
-此法可以選擇 audio tag 符合有 data-key=63 attribute 的 element
+此法可以選擇 audio tag 符合有 data-key=63 attribute 的 element
 
 [CSS選擇器](http://www.w3school.com.cn/cssref/css_selectors.asp)
 
