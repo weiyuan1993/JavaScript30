@@ -75,7 +75,7 @@ arr.includes(searchElement[, fromIndex?])
 ### 解構賦值
     是一種 JavaScript 運算式，可以將陣列或物件中的資料取出成獨立變數。
 
-(MDN完整說明)[https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment]
+[MDN完整說明](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 範例中有使用到，可以將陣列內的值先定義成變數，方便之後取用。
 
