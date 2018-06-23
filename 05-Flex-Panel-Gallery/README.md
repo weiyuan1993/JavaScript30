@@ -5,9 +5,9 @@
 ### box-sizing
 box-sizing 屬性用於更改預設 CSS 盒子模型中所計算的寬度和高度。可以使用此屬性來模擬不正確支持CSS盒子模型規範的瀏覽器的行為。
 
-沒有設定的話，預設值是 `content-box`，在設定元素的 `width`, `height`時是不包括 `padding`, `border`, `margin`的。
+沒有設定的話，預設值是 `content-box`，在設定元素的 `width`, `height`時是不包括 `padding`, `border`, `margin`的。
 
-如果設定成 `box-sizing: border-box`，代表這個元素的`width`, `height`包括 `padding`與`border`(即不必考慮這兩個屬性了，寬高都是基於元素本身), 但不包括`margin`，比較好掌控元素的大小，但是自己已經習慣 `content-box` 的模式，非必要應該不會特別設定此屬性。
+如果設定成 `box-sizing: border-box`，代表這個元素的`width`, `height`包括 `padding`與`border`(即不必考慮這兩個屬性了，寬高都是基於元素本身), 但不包括`margin`，比較好掌控元素的大小，但是自己已經習慣 `content-box` 的模式，非必要應該不會特別設定此屬性。
 
 
 ### CSS 偽元素 ::before, ::after
