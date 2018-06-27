@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+  <script>
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+    let cities = [];
+    // 使用展開運算符，把 data 陣列展開成個別值塞入
+    fetch(endpoint).then(blob => blob.json())
+      .then(data => cities.push(...data)).then(() => {
+        console.log(cities)
+      })
+    function findMatchWords(wordToMatch, cities) {
+      return cities.filter(place => {
+        const regex = new RegExp(wordToMatch, 'gi');
+        return place.city.match(regex) || place.state.match(regex);
+      });
+    }
+    function displayResult() {
+      const results = findMatchWords(this.value, cities);
+      const resultsToRender = results.map(result => {
+        const regex = new RegExp(this.value, "gi");
+        // highlight search value
+        const cityName = result.city.replace(regex, `<span class="hl">${this.value}</span>`);
+        const stateName = result.state.replace(regex, `<span class="hl">${this.value}</span>`);
+
+        return `<li>
+          <span class="name">${cityName}, ${stateName}</span>
+        <span class="population">${numberWithCommas(result.population)}</span>
+        </li>`;
+      })
+      // 因為是字串所以要使用 innerHtml 而不能使用 appendChild
+      //join("") 可將陣列合併成字串並移除逗號
+      suggestions.innerHTML = resultsToRender.join("");
+
+    }
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    const searchInput = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
+
+    searchInput.addEventListener('change', displayResult);
+    searchInput.addEventListener('keyup', displayResult);
+
+  </script>
+</body>
+
+</html>
