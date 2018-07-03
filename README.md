@@ -9,3 +9,4 @@ JavaScript30 挑戰
 5.  [Flex Panel Gallery](https://weiyuan1993.github.io/JavaScript30/05-Flex-Panel-Gallery/)
 6.  [Ajax Type Ahead](https://weiyuan1993.github.io/JavaScript30/06-Ajax-Type-Ahead/)
 7.  [Array Cardio Day2](https://weiyuan1993.github.io/JavaScript30/07-Array-Cardio-Day2/)
+8.  [Fun With HTML5 Canvas](https://weiyuan1993.github.io/JavaScript30/08-Fun-with-HTML5-Canvas/)

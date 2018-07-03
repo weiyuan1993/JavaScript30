@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+
+<body>
+  <canvas id="draw" width="800" height="800"></canvas>
+  <script>
+    const canvas = document.querySelector('#draw');
+    const ctx = canvas.getContext("2d");
+    // 讓 canvas 全螢幕
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // 設定勾勒圖形時用的顏色
+    ctx.strokeStyle = '#BADA55';
+    // 設定填滿圖形時用的顏色.
+    ctx.fillStyle = 'black';
+    // 設定線條寬度。
+    ctx.lineWidth = 5;
+    // 設定線條結尾的樣式。
+    ctx.lineCap = 'round';
+    // 設定線條和線條間接合處的樣式。
+    ctx.lineJoin = 'round';
+
+    let isDrawing = false;
+    let lastX = 0
+    let lastY = 0;
+    let hue = 0;
+    let direction = true;
+    function draw(e) {
+      //  防止沒有點擊滑鼠按鈕而觸發
+      if (!isDrawing) return;
+      console.log(e);
+      //set hue color
+      ctx.strokeStyle = `hsl(${hue},100%,50%)`;
+
+      //starts a new path by emptying the list of sub-paths. 
+      ctx.beginPath();
+      //moves the starting point of a new sub-path to the (x, y) coordinates.
+      ctx.moveTo(lastX, lastY);
+      //connects the last point in the sub-path to the x, y coordinates with a straight line (but does not actually draw it).
+      ctx.lineTo(e.offsetX, e.offsetY);
+      //strokes the current or given path with the current stroke style using the non-zero winding rule.
+      ctx.stroke();
+      [lastX, lastY] = [e.offsetX, e.offsetY];
+
+      if (hue > 360) {
+        hue = 0;
+      }
+      if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+        direction = !direction;
+      }
+      if (direction) {
+        ctx.lineWidth++;
+      } else {
+        ctx.lineWidth--;
+      }
+
+
+      hue++;
+    }
+
+    document.addEventListener('mousemove', draw);
+    document.addEventListener('mousedown', (e) => {
+      isDrawing = true;
+      //設定點下去時候的位置
+      [lastX, lastY] = [e.offsetX, e.offsetY];
+
+    });
+    document.addEventListener('mouseup', () => isDrawing = false);
+
+
+  </script>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+    }
+  </style>
+</body>
+
+</html>
