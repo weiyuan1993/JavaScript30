@@ -10,3 +10,4 @@ JavaScript30 挑戰
 6.  [Ajax Type Ahead](https://weiyuan1993.github.io/JavaScript30/06-Ajax-Type-Ahead/)
 7.  [Array Cardio Day2](https://weiyuan1993.github.io/JavaScript30/07-Array-Cardio-Day2/)
 8.  [Fun With HTML5 Canvas](https://weiyuan1993.github.io/JavaScript30/08-Fun-with-HTML5-Canvas/)
+9.  [Dev Tools Domination](https://weiyuan1993.github.io/JavaScript30/09-Dev-Tools-Domination/)

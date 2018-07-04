@@ -4,6 +4,8 @@
 
 用 canvas 實作漸變顏色大小的畫筆。
 
+<!--more-->
+
 ### canvas
 
 ```javascript
