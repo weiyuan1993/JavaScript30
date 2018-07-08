@@ -8,7 +8,7 @@ console 的各種好用方法
 
 ### console.assert()
 
-可輸出  測試結果
+可輸出測試結果
 
 ```javascript
 const a = 1;
@@ -36,7 +36,7 @@ console.assert(a === b, `${a},${b} is not equal!`);
 
 可以計算出區段執行的時間
 
-![Imgur](https://i.imgur.com/XPwaagB.png)
+![Imgur](https://i.imgur.com/XPwaagB.png)
 
 ```javascript
 console.time("fetching data");
