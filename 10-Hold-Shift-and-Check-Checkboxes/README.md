@@ -2,8 +2,8 @@
 
 ## 筆記
 
-[DEMO]()
-[GitHub]()
+[DEMO](https://weiyuan1993.github.io/JavaScript30/10-Hold-Shift-and-Check-Checkboxes)
+[GitHub](https://github.com/weiyuan1993/JavaScript30/tree/master/10-Hold-Shift-and-Check-Checkboxes)
 
 寫一個可以實現 `shift` 來多重勾選的 checkbox list
 
