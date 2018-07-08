@@ -2,6 +2,8 @@
 
 JavaScript30 挑戰
 
+[挑戰網址](https://javascript30.com/)
+
 1.  [JavaScript Drum Kit](https://weiyuan1993.github.io/JavaScript30/01-JavaScript-Drum-Kit/)
 2.  [JS and CSS Clock](https://weiyuan1993.github.io/JavaScript30/02-JS-and-CSS-Clock/)
 3.  [CSS Variables](https://weiyuan1993.github.io/JavaScript30/03-CSS-Variables/)
@@ -11,3 +13,4 @@ JavaScript30 挑戰
 7.  [Array Cardio Day2](https://weiyuan1993.github.io/JavaScript30/07-Array-Cardio-Day2/)
 8.  [Fun With HTML5 Canvas](https://weiyuan1993.github.io/JavaScript30/08-Fun-with-HTML5-Canvas/)
 9.  [Dev Tools Domination](https://weiyuan1993.github.io/JavaScript30/09-Dev-Tools-Domination/)
+10. [Hold Shift and Check Checkboxes](https://weiyuan1993.github.io/JavaScript30/10-Hold-Shift-and-Check-Checkboxes/)
