@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hold Shift to Check Multiple Checkboxes</title>
+</head>
+
+<body>
+  <style>
+    html {
+      font-family: sans-serif;
+      background: #ffc600;
+    }
+
+    .inbox {
+      max-width: 400px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #F1F1F1;
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+    }
+
+
+    input:checked+p {
+      background: #F9F9F9;
+      text-decoration: line-through;
+    }
+
+    input[type="checkbox"] {
+      margin: 20px;
+    }
+
+    p {
+      margin: 0;
+      padding: 20px;
+      transition: background 0.2s;
+      flex: 1;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+      border-left: 1px solid #D1E2FF;
+    }
+  </style>
+  <!--
+   The following is a common layout you would see in an email client.
+
+   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+
+  -->
+  <div class="inbox">
+    <div class="item">
+      <input type="checkbox">
+      <p>This is an inbox layout.</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check one item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Hold down your Shift key</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check a lower item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Everything inbetween should also be set to checked</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Try do it without any libraries</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Just regular JavaScript</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Good Luck!</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Don't forget to tweet your result!</p>
+    </div>
+  </div>
+
+  <script>
+
+    const checkboxes = document.querySelectorAll(".inbox input[type='checkbox']");
+    let lastChecked;
+    function handleClick(e) {
+      console.log(e)
+      //判斷是否有按住 shift, 這邊的 this 是被點擊的那個 checkbox
+      if (e.shiftKey && this.checked) {
+        // isBetween 預設為 false ，待 forEach 開始跑時，檢查是否為勾選的box，若是就將 isBetween = !isBetween
+        let isBetween = false;
+        checkboxes.forEach(checkbox => {
+          //console.log(checkbox);
+
+          // 檢查是否在兩個 checked box 範圍裡面
+          // checkbox === this 是為shift點擊的checkbox，checkbox === lastChecked為第一個點選的 checkbox
+          if (checkbox === this || checkbox === lastChecked) {
+            // 這邊不使用 isBetween = true 是因為離開checked box範圍(遇到 shift 點擊的 checkbox)後要將 isBetween 設為 false，
+            // 簡單使用 isBetween = !isBetween 就能反轉布林值
+            isBetween = !isBetween;
+          }
+          if (isBetween) {
+            console.log(checkbox);
+            checkbox.checked = true;
+          } else {
+            //console.log('我不在 checked box 範圍裡');
+
+          }
+
+        })
+      }
+      // 紀錄第一個點選的 checkbox
+      lastChecked = this;
+
+    }
+    checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick));
+
+  </script>
+</body>
+
+</html>
