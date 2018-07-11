@@ -14,3 +14,4 @@ JavaScript30 挑戰
 8.  [Fun With HTML5 Canvas](https://weiyuan1993.github.io/JavaScript30/08-Fun-with-HTML5-Canvas/)
 9.  [Dev Tools Domination](https://weiyuan1993.github.io/JavaScript30/09-Dev-Tools-Domination/)
 10. [Hold Shift and Check Checkboxes](https://weiyuan1993.github.io/JavaScript30/10-Hold-Shift-and-Check-Checkboxes/)
+11. [Custom Video Player](https://weiyuan1993.github.io/JavaScript30/11-Custom-Video-Player)
