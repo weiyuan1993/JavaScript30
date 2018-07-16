@@ -25,4 +25,4 @@ array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
 if(pressed.length>secretCode.length){
     pressed.shift();
 }
-```s
+```
