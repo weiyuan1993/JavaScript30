@@ -15,3 +15,4 @@ JavaScript30 挑戰
 9.  [Dev Tools Domination](https://weiyuan1993.github.io/JavaScript30/09-Dev-Tools-Domination/)
 10. [Hold Shift and Check Checkboxes](https://weiyuan1993.github.io/JavaScript30/10-Hold-Shift-and-Check-Checkboxes/)
 11. [Custom Video Player](https://weiyuan1993.github.io/JavaScript30/11-Custom-Video-Player)
+12. [Key Sequence Detection](https://weiyuan1993.github.io/JavaScript30/12-Key-Sequence-Detection)
