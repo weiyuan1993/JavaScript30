@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Reference VS Copy</title>
+</head>
+<body>
+
+  <script>
+    // start with strings, numbers and booleans
+
+    // Let's say we have an array
+    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+    // and we want to make a copy of it.
+    // const copy1 = players;
+    // console.log(players,copy1);
+    // You might think we can just do something like this:
+  //copy1[3] = 'vic';
+    // however what happens when we update that array?
+    //console.log(players,copy1);
+
+    // now here is the problem!
+
+    // oh no - we have edited the original array too!
+
+    // Why? It's because that is an array reference, not an array copy. They both point to the same array!
+
+    // So, how do we fix this? We take a copy instead!
+
+    // one way
+    const copy2 =players.slice();
+    copy2[3] = 'vic';
+    console.log(players,copy2)
+    // or create a new array and concat the old one in
+    const copy3 = [].concat(players);
+    copy3[3] = 'vic';
+    console.log(players,copy3)
+    // or use the new ES6 Spread
+    const copy4 = [...players];
+    copy4[3] = 'vic';
+    console.log(players,copy4);
+    const copy5 = Array.from(players);
+    copy5[3]="vicvic";
+    console.log(players,copy5)
+    // now when we update it, the original one isn't changed
+    // The same thing goes for objects, let's say we have a person object
+
+    // with Objects
+    const person = {
+      name: 'Wes Bos',
+      age: 80
+    };
+
+    // and think we make a copy:
+
+    // how do we take a copy instead?
+    const copyObject = Object.assign({},person);
+    copyObject.born = 1993;
+    console.log(person,copyObject);
+    // We will hopefully soon see the object ...spread
+    const copyPerson = {...person};
+    copyPerson.born = 1994;
+    console.log(person,copyPerson)
+    // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+    const vic = {
+      name:'vic',
+      age:24,
+      social:{
+        facebook:'weiyuan@facebook',
+        twitter:'twitter@com'
+      }
+    }
+    const copyVic = vic;
+    copyVic.social.facebook = 'vic@facebook';
+    console.log(vic, copyVic);
+    const copyVic2 = Object.assign({},vic);
+    copyVic2.social.facebook = 'vic2@facebook';
+    console.log(vic, copyVic);
+
+    const copyVic3 =JSON.parse(JSON.stringify(vic));
+    copyVic3.social.facebook = 'vic3@facebook';
+    console.log(vic,copyVic3);
+  </script>
+
+</body>
+</html>
