@@ -16,3 +16,5 @@ JavaScript30 挑戰
 10. [Hold Shift and Check Checkboxes](https://weiyuan1993.github.io/JavaScript30/10-Hold-Shift-and-Check-Checkboxes/)
 11. [Custom Video Player](https://weiyuan1993.github.io/JavaScript30/11-Custom-Video-Player)
 12. [Key Sequence Detection](https://weiyuan1993.github.io/JavaScript30/12-Key-Sequence-Detection)
+12. [Slide in on Scroll](https://weiyuan1993.github.io/JavaScript30/13-Slide-in-on-Scroll)
+12. [JavaScript References VS Copying](https://weiyuan1993.github.io/JavaScript30/14-JavaScript-References-VS-Copying)
