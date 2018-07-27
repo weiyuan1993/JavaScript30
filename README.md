@@ -18,4 +18,4 @@ JavaScript30 挑戰
 12. [Key Sequence Detection](https://weiyuan1993.github.io/JavaScript30/12-Key-Sequence-Detection)
 13. [Slide in on Scroll](https://weiyuan1993.github.io/JavaScript30/13-Slide-in-on-Scroll)
 14. [JavaScript References VS Copying](https://weiyuan1993.github.io/JavaScript30/14-JavaScript-References-VS-Copying)
-15. [LocalStorage](https://weiyuan1993.github.io/JavaScript30/14-LocalStorage)
+15. [LocalStorage](https://weiyuan1993.github.io/JavaScript30/15-LocalStorage)
