@@ -20,3 +20,4 @@ JavaScript30 挑戰
 14. [JavaScript References VS Copying](https://weiyuan1993.github.io/JavaScript30/14-JavaScript-References-VS-Copying)
 15. [LocalStorage](https://weiyuan1993.github.io/JavaScript30/15-LocalStorage)
 16. [Mouse Move Shadow](https://weiyuan1993.github.io/JavaScript30/16-Mouse-Move-Shadow)
+17. [Sort Without Articles](https://weiyuan1993.github.io/JavaScript30/17-Sort-Without-Article)
