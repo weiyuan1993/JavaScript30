@@ -2,8 +2,8 @@
 
 ## 筆記
 
-[DEMO](https://weiyuan1993.github.io/JavaScript30/17-Sort-Without-Article)
-[GitHub](https://github.com/weiyuan1993/JavaScript30/tree/master/17-Sort-Without-Article)
+[DEMO](https://weiyuan1993.github.io/JavaScript30/17-Sort-Without-Articles)
+[GitHub](https://github.com/weiyuan1993/JavaScript30/tree/master/17-Sort-Without-Articles)
 
 <!--more-->
 
