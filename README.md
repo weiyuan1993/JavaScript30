@@ -21,3 +21,4 @@ JavaScript30 挑戰
 15. [LocalStorage](https://weiyuan1993.github.io/JavaScript30/15-LocalStorage)
 16. [Mouse Move Shadow](https://weiyuan1993.github.io/JavaScript30/16-Mouse-Move-Shadow)
 17. [Sort Without Articles](https://weiyuan1993.github.io/JavaScript30/17-Sort-Without-Articles)
+18. [Adding Up Times with Reduce](https://weiyuan1993.github.io/JavaScript30/18-Adding-Up-Times-with-Reduce)
