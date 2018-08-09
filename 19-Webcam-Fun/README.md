@@ -96,7 +96,7 @@
     [getImageData](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData)
     [putImageData](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/putImageData)
 
-6)  影片中止：
+6.  影片中止：
     ```javascript
     let tracks = videoStream.getVideoTracks();
     tracks[0].stop();
