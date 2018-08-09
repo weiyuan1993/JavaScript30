@@ -41,14 +41,6 @@ function paintToCanvas() {
 function drawVideo() {
     draw = setInterval(() => {
         ctx.drawImage(video, 0, 0, width, height);
-        // get canvas pixel
-        let pixels = ctx.getImageData(0, 0, width, height);
-        //pixels = redEffect(pixels);
-        //pixels = rgbSplit(pixels);
-        //pixels = greenScreen(pixels);
-
-        // put ImageData to canvas
-        ctx.putImageData(pixels, 0, 0);
     }, 30);
 }
 function takePhoto() {
@@ -168,9 +160,13 @@ function toggleCameraFunc() {
         videoStop();
         init();
         toggleCamera.textContent = "Play";
+        canvas.style.transform = "";
+        video.style.transform = "";
     } else {
         getVideo();
         toggleCamera.textContent = "Pause";
+        canvas.style.transform = "rotateY(180deg)";
+        video.style.transform = "rotateY(180deg)";
     }
     isRun = !isRun;
 }
