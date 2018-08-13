@@ -23,3 +23,4 @@ JavaScript30 挑戰
 17. [Sort Without Articles](https://weiyuan1993.github.io/JavaScript30/17-Sort-Without-Articles)
 18. [Adding Up Times with Reduce](https://weiyuan1993.github.io/JavaScript30/18-Adding-Up-Times-with-Reduce)
 19. [Webcam Fun](https://weiyuan1993.github.io/JavaScript30/19-Webcam-Fun)
+20. [Speech Detection](https://weiyuan1993.github.io/JavaScript30/20-Speech-Detection)

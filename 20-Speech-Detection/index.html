@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Speech Detection</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="upper">
+      <h1>Speech Detection</h1>
+      <div>
+        <div class="chinese active">🇹🇼TW</div>
+        <div class="english">🇺🇸ENG</div>
+      </div>
+    </div>
+    <div class="words" contenteditable>
+
+    </div>
+  </div>
+
+
+  <script>
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const speechRecongnition = new SpeechRecognition();
+
+    const chinese = document.querySelector('.chinese');
+    const english = document.querySelector('.english');
+    let isCh = true;
+
+    console.log(speechRecongnition)
+    //控制臨時結果是否回傳。 true 回傳，false 不回傳。臨時結果指的是所有非最終 (Final) 結果的結果
+    speechRecongnition.interimResult = true;
+    speechRecongnition.lang = isCh ? 'zh-TW' : 'en-US';
+    let p = document.createElement('p');
+    p.textContent = '請開始說話 🗣';
+    const words = document.querySelector('.words');
+    words.appendChild(p);
+
+    speechRecongnition.addEventListener('result', e => {
+      // 將所有辨識的文字串在一起
+      const transcript = Array.from(e.results)
+        .map(result => result[0])
+        .map(result => result.transcript)
+        .join('');
+      console.log(transcript);
+      console.log(e.results[0]);
+
+      const filterBadLang = transcript
+        .replace(/幹你娘|靠北|操你媽/gi, '💩')
+        .replace(/為遠|維元/gi, '帥哥😎')
+        .replace(/庭昀|亭雲/gi, '🐷')
+      p.textContent = filterBadLang;
+
+
+      if (e.results[0].isFinal) {
+        p = document.createElement('p');
+        words.appendChild(p);
+
+      }
+    })
+    speechRecongnition.addEventListener('end', speechRecongnition.start)
+    speechRecongnition.start();
+
+    chinese.addEventListener('click', () => {
+      isCh = true;
+      chinese.classList.add('active');
+      english.classList.remove('active');
+      speechRecongnition.lang = isCh ? 'zh-TW' : 'en-US';
+
+
+    })
+    english.addEventListener('click', () => {
+      isCh = false;
+      english.classList.add('active');
+      chinese.classList.remove('active');
+      speechRecongnition.lang = isCh ? 'zh-TW' : 'en-US';
+
+    })
+  </script>
+
+
+  <style>
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      background: #ffc600;
+      font-family: 'helvetica neue';
+      font-weight: 200;
+      font-size: 20px;
+    }
+
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      flex-direction: column;
+    }
+
+    .upper {
+      font-family: fantasy;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    h1 {
+      text-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+      margin-right: 50px;
+    }
+
+    .chinese,
+    .english {
+      width: 70px;
+      height: 25px;
+      padding: 5px;
+      display: inline-block;
+      margin: 0 -2px;
+      border: 2px solid black;
+      line-height: 34px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.1s;
+    }
+
+    .chinese:hover,
+    .english:hover,
+    .active {
+      background-color: #41313e;
+      color: white;
+
+    }
+
+    .chinese {
+
+      border-right: 0;
+
+      /* border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px; */
+    }
+
+    .english {
+      border-left: 0;
+
+      /* border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px; */
+    }
+
+    .words {
+      width: 500px;
+      /* margin: 50px auto; */
+      background: white;
+      border-radius: 5px;
+      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem 1rem 5rem;
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+      background-size: 100% 3rem;
+      /* position: relative; */
+      line-height: 3rem;
+    }
+
+    p {
+      margin: 0 0 0.5rem;
+    }
+
+    .words:before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      top: 0;
+      left: 30px;
+      bottom: 0;
+      border: 1px solid;
+      border-color: transparent #efe4e4;
+    }
+  </style>
+
+</body>
+
+</html>
