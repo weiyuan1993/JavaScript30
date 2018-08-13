@@ -31,7 +31,7 @@
 
     console.log(speechRecongnition)
     //控制臨時結果是否回傳。 true 回傳，false 不回傳。臨時結果指的是所有非最終 (Final) 結果的結果
-    speechRecongnition.interimResult = true;
+    speechRecongnition.interimResults = true;
     speechRecongnition.lang = isCh ? 'zh-TW' : 'en-US';
     let p = document.createElement('p');
     p.textContent = '請開始說話 🗣';
@@ -47,11 +47,11 @@
       console.log(transcript);
       console.log(e.results[0]);
 
-      const filterBadLang = transcript
-        .replace(/幹你娘|靠北|操你媽/gi, '💩')
-        .replace(/為遠|維元/gi, '帥哥😎')
-        .replace(/庭昀|亭雲/gi, '🐷')
-      p.textContent = filterBadLang;
+      // const filterBadLang = transcript
+      //   .replace(/幹你娘|靠北|操你媽/gi, '💩')
+      //   .replace(/為遠|維元/gi, '帥哥😎')
+      //   .replace(/庭昀|亭雲/gi, '🐷')
+      p.textContent = transcript;
 
 
       if (e.results[0].isFinal) {
