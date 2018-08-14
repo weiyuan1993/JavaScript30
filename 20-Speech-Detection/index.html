@@ -47,11 +47,11 @@
       console.log(transcript);
       console.log(e.results[0]);
 
-      // const filterBadLang = transcript
-      //   .replace(/幹你娘|靠北|操你媽/gi, '💩')
-      //   .replace(/為遠|維元/gi, '帥哥😎')
-      //   .replace(/庭昀|亭雲/gi, '🐷')
-      p.textContent = transcript;
+      const filterBadLang = transcript
+        .replace(/幹你娘|靠北|操你媽/gi, '💩')
+        .replace(/為遠|維元|委員/gi, '帥哥😎')
+        .replace(/庭昀|亭雲/gi, '🐷')
+      p.textContent = filterBadLang;
 
 
       if (e.results[0].isFinal) {
@@ -68,7 +68,8 @@
       chinese.classList.add('active');
       english.classList.remove('active');
       speechRecongnition.lang = isCh ? 'zh-TW' : 'en-US';
-
+      p.textContent = '正在切換為中文...';
+      setTimeout(() => { p.textContent = '請開始說話 🗣' }, 1000);
 
     })
     english.addEventListener('click', () => {
@@ -76,7 +77,8 @@
       english.classList.add('active');
       chinese.classList.remove('active');
       speechRecongnition.lang = isCh ? 'zh-TW' : 'en-US';
-
+      p.textContent = '正在切換為英文...';
+      setTimeout(() => { p.textContent = '請開始說話 🗣' }, 1000);
     })
   </script>
 
@@ -141,14 +143,12 @@
 
     .chinese {
 
-      border-right: 0;
 
       /* border-top-left-radius: 10px;
       border-bottom-left-radius: 10px; */
     }
 
     .english {
-      border-left: 0;
 
       /* border-top-right-radius: 10px;
       border-bottom-right-radius: 10px; */
