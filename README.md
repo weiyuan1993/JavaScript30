@@ -25,3 +25,4 @@ JavaScript30 挑戰
 19. [Webcam Fun](https://weiyuan1993.github.io/JavaScript30/19-Webcam-Fun)
 20. [Speech Detection](https://weiyuan1993.github.io/JavaScript30/20-Speech-Detection)
 21. [Geolocation](https://weiyuan1993.github.io/JavaScript30/21-Geolocation)
+22. [Follow Along Link Highlighter](https://weiyuan1993.github.io/JavaScript30/22-Follow-Along-Link-Highlighter)

@@ -22,21 +22,23 @@
 透過 `navigator.geolocation.watchPosition` 來即時監聽使用者當前地理位置狀態，再來改變指南針角度即可。
 
 ```javascript
-const arrow = document.querySelector('.arrow');
-const speed = document.querySelector('.speed-value');
-navigator.geolocation.watchPosition(position=>{
-    console.log(position)
+const arrow = document.querySelector(".arrow");
+const speed = document.querySelector(".speed-value");
+navigator.geolocation.watchPosition(
+  position => {
+    console.log(position);
     speed.textContent = position.coords.speed;
     arrow.style.transform = `rotate(${position.coords.heading}deg)`;
-},(err)=>console.log(err))
-
+  },
+  err => console.log(err)
+);
 ```
 
-##  [Coordinates](https://developer.mozilla.org/en-US/docs/Web/API/Coordinates) 資料應用
+## [Coordinates](https://developer.mozilla.org/en-US/docs/Web/API/Coordinates) 資料應用
 
 透過 `watchPosition`, `getCurrentPosition` 會回傳 `Coordinates` 資料，其中包含：
 
-- longitude  經度 > `double`
+- longitude 經度 > `double`
 - latitude 緯度 > `double`
 - altitude 高度 > `double` (桌機 null)
 - accuracy 經緯度準確度 > `double`
