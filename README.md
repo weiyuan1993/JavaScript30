@@ -26,3 +26,4 @@ JavaScript30 挑戰
 20. [Speech Detection](https://weiyuan1993.github.io/JavaScript30/20-Speech-Detection)
 21. [Geolocation](https://weiyuan1993.github.io/JavaScript30/21-Geolocation)
 22. [Follow Along Link Highlighter](https://weiyuan1993.github.io/JavaScript30/22-Follow-Along-Link-Highlighter)
+23. [Speech Synthesis](https://weiyuan1993.github.io/JavaScript30/23-Speech-Synthesis)
