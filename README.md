@@ -27,4 +27,6 @@ JavaScript30 挑戰
 21. [Geolocation](https://weiyuan1993.github.io/JavaScript30/21-Geolocation)
 22. [Follow Along Link Highlighter](https://weiyuan1993.github.io/JavaScript30/22-Follow-Along-Link-Highlighter)
 23. [Speech Synthesis](https://weiyuan1993.github.io/JavaScript30/23-Speech-Synthesis)
-24. [Speech Synthesis](https://weiyuan1993.github.io/JavaScript30/24-Sticky-Nav)
+24. [Sticky Nav](https://weiyuan1993.github.io/JavaScript30/24-Sticky-Nav)
+25. [Event Capture, Propagation, Bubbling and Once](https://weiyuan1993.github.io/JavaScript30/25-Event-Capture-Propagation-Bubbling-and-Once)
+
