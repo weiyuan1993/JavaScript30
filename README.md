@@ -29,4 +29,5 @@ JavaScript30 挑戰
 23. [Speech Synthesis](https://weiyuan1993.github.io/JavaScript30/23-Speech-Synthesis)
 24. [Sticky Nav](https://weiyuan1993.github.io/JavaScript30/24-Sticky-Nav)
 25. [Event Capture, Propagation, Bubbling and Once](https://weiyuan1993.github.io/JavaScript30/25-Event-Capture-Propagation-Bubbling-and-Once)
+26. [Stripe Follow Along Nav](https://weiyuan1993.github.io/JavaScript30/26-Stripe-Follow-Along-Nav)
 
