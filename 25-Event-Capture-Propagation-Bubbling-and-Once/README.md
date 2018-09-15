@@ -19,10 +19,10 @@ W3C圖解：
 
 ## Event Capture & Bubbling
 
-想要改變事件監聽順序從 `capture` 還是 `bubbling`ㄎ 階段開始，`addEventListener()` 的第三個參數可以設定，預設無給第三個參數或給 `false` 即為 `bubbling`，若設為 `true` 即為使用在 `capture` 階段。
+想要改變事件監聽順序從 `capture` 還是 `bubbling`階段開始，`addEventListener()` 的第三個參數可以設定，預設無給第三個參數或給 `false` 即為 `bubbling`，若設為 `true` 即為使用在 `capture` 階段。
 
 ## Propagation
-想要停止事件傳遞，可以使用 `stopPropagation()`
+想要停止事件傳遞，可以使用 `stopPropagation()`
 ```javascript
 button.addEventListener('click', (e) => {
 e.stopPropagation();
@@ -34,7 +34,7 @@ console.log('Click!!!');
 
 ## Once
 
-`addEventListener` 第三個參數可以用物件來設定，其中可以設定 `once` 值，這樣就可以輕鬆達成監聽事件觸發一次後即移除監聽，不需再寫 `removeEventlistener`，滿方便的。
+`addEventListener` 第三個參數可以用物件來設定，其中可以設定 `once` 值，這樣就可以輕鬆達成監聽事件觸發一次後即移除監聽，不需再寫 `removeEventlistener`，滿方便的。
 
 ```javascript
 button.addEventListener('click', () => {
@@ -43,7 +43,7 @@ console.log('Click!!!');
 capture:false,
 once: true
 });
-// 點擊一次之後即無效
+// 點擊一次之後即無效
 ```
 
 [參考](https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/)
