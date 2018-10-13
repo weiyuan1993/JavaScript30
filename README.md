@@ -2,8 +2,10 @@
 
 JavaScript30 挑戰
 
-[挑戰網址](https://javascript30.com/)
+[我的筆記](https://weiyuan1993.github.io/categories/JavaScript30/)
 
+[挑戰網址](https://javascript30.com/)
+## Demo:
 1.  [JavaScript Drum Kit](https://weiyuan1993.github.io/JavaScript30/01-JavaScript-Drum-Kit/)
 2.  [JS and CSS Clock](https://weiyuan1993.github.io/JavaScript30/02-JS-and-CSS-Clock/)
 3.  [CSS Variables](https://weiyuan1993.github.io/JavaScript30/03-CSS-Variables/)
