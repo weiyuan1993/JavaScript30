@@ -32,3 +32,4 @@ JavaScript30 挑戰
 26. [Stripe Follow Along Nav](https://weiyuan1993.github.io/JavaScript30/26-Stripe-Follow-Along-Nav)
 27. [Click and Drag](https://weiyuan1993.github.io/JavaScript30/27-Click-and-Drag)
 28. [Video Speed Controller](https://weiyuan1993.github.io/JavaScript30/28-Video-Speed-Controller)
+29. [Countdown Timer](https://weiyuan1993.github.io/JavaScript30/29-Countdown-Timer)
